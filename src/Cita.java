@@ -7,7 +7,7 @@ import java.util.Map;
 public class Cita {
     public HashMap<String, String> fecha = new HashMap<>();
     public HashMap<String, String> cita = new HashMap<>();
-    private String archivoTxt = "Citas.txt";
+    private String archivoTxt = "./src/db/Citas.txt";
     private File archivo = new File(archivoTxt);
     private List<String> id = new ArrayList<>();
     private int i = 0;

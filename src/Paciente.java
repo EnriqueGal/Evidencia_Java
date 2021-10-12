@@ -6,7 +6,7 @@ import java.util.Map;
 
 public class Paciente {
     public HashMap<String,String> pacientes = new HashMap<>();
-    private String archivoTxt = "Pacientes.txt";
+    private String archivoTxt = "./src/db/Pacientes.txt";
     private File archivo = new File(archivoTxt);
     private List<String> id = new ArrayList<>();
     private int i = 0;
