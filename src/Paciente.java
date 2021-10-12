@@ -51,7 +51,7 @@ public class Paciente {
             e.printStackTrace();
         }
         String[] tokens = str.split(";");
-        for (int i = 0; i < tokens.length; i = i + 2) {
+        for (int i = 0; i < tokens.length; i = i + 3) {
             id.add(tokens[i]);
             pacientes.put(tokens[a],tokens[b]);
             a = a + 2;
