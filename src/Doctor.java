@@ -4,9 +4,9 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class Paciente {
-    public HashMap<String,String> pacientes = new HashMap<>();
-    private String archivoTxt = "Pacientes.txt";
+public class Doctor {
+    public HashMap<String, String> doctores = new HashMap<>();
+    private String archivoTxt = "Doctores.txt";
     private File archivo = new File(archivoTxt);
     private List<String> id = new ArrayList<>();
     private int i = 0;
@@ -18,10 +18,10 @@ public class Paciente {
             cargarArchivo();
         }
         i = 1;
-        pacientes.put(nombre, apellido);
+        doctores.put(nombre, apellido);
         String lista = "";
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(archivoTxt))){
-            for (Map.Entry<String, String> aux : pacientes.entrySet()){
+            for (Map.Entry<String, String> aux : doctores.entrySet()){
                 lista = lista.concat("ID:"+ i + ";" + aux.getKey() + ";" + aux.getValue() + ";\n");
                 i++;
             }
@@ -39,10 +39,10 @@ public class Paciente {
         }
     }
     public void cargarArchivo(){
-        pacientes.clear();
+        doctores.clear();
         id.clear();
         String aux, str = "";
-        int a = 1, b =2;
+        int a = 1, b = 2;
         try (BufferedReader buff = new BufferedReader(new FileReader(archivoTxt))){
             while ((aux = buff.readLine()) != null){
                 str = str.concat(aux);
@@ -51,10 +51,11 @@ public class Paciente {
             e.printStackTrace();
         }
         String[] tokens = str.split(";");
-        for (int i = 0; i < tokens.length; i = i + 2) {
+        for (int i = 0; i < tokens.length; i = i + 3) {
             id.add(tokens[i]);
-            pacientes.put(tokens[a],tokens[b]);
-            a = a + 2;
+            doctores.put(tokens[a], tokens[b]);
+            a = a + 3;
+            b = b + 3;
         }
     }
 }
