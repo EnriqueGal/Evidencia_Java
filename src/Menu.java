@@ -88,7 +88,7 @@ public class Menu {
     public boolean admin(List<String> cred)throws IOException{
         boolean accept;
         Properties prop = new Properties();
-        prop.load(new FileInputStream("./src/administradores.properties"));
+        prop.load(new FileInputStream("./src/administrador-sistema"));
         System.out.println(prop.get("user"));
         String id = prop.get("id").toString();
         String pass = prop.get("password").toString();
